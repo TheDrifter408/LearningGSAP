@@ -2,7 +2,6 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import Container from "./utils/Container";
 import Image from "next/image";
 
 const images = [

@@ -11,6 +11,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        textWhite:"rgba(255,255,255,0.8)",
       },
       backgroundColor:{
         primary:"#3D342D"

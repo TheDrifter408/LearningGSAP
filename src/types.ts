@@ -10,4 +10,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     typeofbutton:"menuOpen" | "menuClose" | "dropDown" | "arrow-left" | "arrow-right" | "custom";
     imageSrc?: string;
     text?:string;
-} 
+}
+
+export interface MenuProps {
+    onClick:() => void;
+}
