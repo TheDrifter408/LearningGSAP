@@ -17,22 +17,20 @@ export default function Header(){
         if(isOpen === true){
             tl.to(menuRef.current,{
                 duration:1.2,
-                x:'-100%',
+                y:'-100%',
                 ease:"power4.out"
             });
             setIsOpen(!isOpen);
         } else {
             tl.to(menuRef.current,{
                 duration:1.2,
-                x:'0',
+                y:'0',
                 ease:"power4.out"
             });
             setIsOpen(!isOpen);
         }
     }
-
     
-
     const tl = gsap.timeline();
 
     return(
