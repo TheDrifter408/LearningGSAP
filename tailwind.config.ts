@@ -18,6 +18,10 @@ export default {
       },
       backgroundImage: {
         'services-bg':"url('/static/services_background.jpg')",
+        'secondary-bg':"linear-gradient(rgb(242, 122, 33) 0px, rgb(242, 122, 33) 0px)"
+      },
+      transitionProperty: {
+        'background-size':'background-size'
       }
     },
   },
