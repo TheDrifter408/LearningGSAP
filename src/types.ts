@@ -25,3 +25,7 @@ export interface ServiceItemProps {
 export interface ServicesProps {
     serviceItems: ServiceItemProps[]
 }
+
+export interface useSmoothScrollProps {
+    isMobile:boolean;
+}

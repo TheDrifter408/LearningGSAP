@@ -3,35 +3,44 @@
 import Image from "next/image";
 import Container from "./utils/Container";
 import Button from "./utils/Button";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Menu from "./Menu";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Header(){
 
-    const tl = gsap.timeline();    
-    const menuRef = useRef(null);
+    const menuRef = useRef<HTMLDivElement | null>(null);
+    const tl = useRef<GSAPTimeline | null>(null);
+
+    const { contextSafe } = useGSAP(() => {
+        if(tl){
+            tl.current = gsap.timeline();
+        }
+    })
 
     const [isOpen,setIsOpen] = useState(false);
 
-    function handleClick(){
-        if(isOpen === true){
-            tl.to(menuRef.current,{
-                duration:1.2,
-                y:'-100%',
-                ease:"power4.out"
-            });
-            setIsOpen(!isOpen);
-        } else {
-            tl.to(menuRef.current,{
-                duration:1.2,
-                y:'0',
-                ease:"power4.out"
-            });
-            setIsOpen(!isOpen);
+    const handleClick = contextSafe(() => {
+        if(tl.current){
+            if(isOpen === true){
+                tl.current.to(menuRef.current,{
+                    duration:1.2,
+                    y:'-100%',
+                    ease:"power4.out"
+                });
+                setIsOpen(!isOpen);
+            } else {
+                tl.current.to(menuRef.current,{
+                    duration:1.2,
+                    y:'0',
+                    ease:"power4.out"
+                });
+                setIsOpen(!isOpen);
+            }
+            
         }
-    }
-    
+    })
 
     return(
         <section className="fixed top-0 left-0 z-10 w-full bg-transparent">

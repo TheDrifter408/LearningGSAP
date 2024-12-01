@@ -2,6 +2,13 @@
 import Banner from './components/Banner';
 import Services from './components/Services';
 import Container from './components/utils/Container';
+import Header from './components/Header';
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/all";
+import { ScrollSmoother } from "gsap/all";
+import { ScrollToPlugin } from "gsap/all";
+import useDeviceType from "./components/hooks/useDeviceType";
+import useSmoothScroll from "./components/hooks/useSmoothScroll";
 
 const services = [
   {
@@ -35,17 +42,21 @@ const services = [
   },
 ]
 
+gsap.registerPlugin(ScrollTrigger,ScrollSmoother,ScrollToPlugin);
+
+
+
 export default function Home() {
 
   return (
-    <>
+     <div className="app">
+     <Header />
      <Banner />
      <section className="bg-services-bg">
       <Container className="grid grid-cols-1 py-10 gap-5 md:grid-cols-2 lg:grid-cols-3">
         <Services serviceItems={services} />
       </Container>
      </section>
-    </>
-    
+     </div>
   );
 }
