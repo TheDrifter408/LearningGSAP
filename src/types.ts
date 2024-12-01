@@ -15,3 +15,13 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export interface MenuProps {
     onClick:() => void;
 }
+
+export interface ServiceItemProps {
+    id:number,
+    imgSrc:string;
+    title:string;
+}
+
+export interface ServicesProps {
+    serviceItems: ServiceItemProps[]
+}

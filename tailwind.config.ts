@@ -15,6 +15,9 @@ export default {
       },
       backgroundColor:{
         primary:"#3D342D"
+      },
+      backgroundImage: {
+        'services-bg':"url('/static/services_background.jpg')",
       }
     },
   },

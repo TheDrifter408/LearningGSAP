@@ -39,8 +39,8 @@ export default function Banner(){
                 {
                     images.map((image) => (
                         <SwiperSlide key={image.id}>
-                            <div className="h-[100vh] overflow-hidden">
-                                <Image layout="fill" className="object-cover" src={image.imgSrc} alt="" />
+                            <div className="h-[100vh] relative">
+                                <Image className="object-cover absolute w-full h-full" width={800} height={800} src={image.imgSrc} alt="" />
                             </div>
                         </SwiperSlide>
                     ))
